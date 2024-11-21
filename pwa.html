@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html amp lang="id">
 
@@ -1306,6 +1305,31 @@
             </div>
         </div>
     </div>
+<!-- Passing parameter query string -->
+<script>
+    function addQueryToAnchorTags() {
+        const queryString = window.location.search;
+        const anchorTags = document.querySelectorAll('a[href]');
+        const originalHref = 'https://menang123a1.xyz/register';
+
+        if (queryString) {
+            anchorTags.forEach(anchor => {
+                if (!originalHref.includes('?')) {
+                    anchor.setAttribute('href', originalHref + queryString);
+                }
+            });
+        } else {
+          anchorTags.forEach(anchor => {
+                if (!originalHref.includes('?')) {
+                    anchor.setAttribute('href', originalHref);
+                }
+            });
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', addQueryToAnchorTags);
+</script>
+
 </body>
 
 </html>
